@@ -14,31 +14,31 @@ ou partager une imprimante Windows à partir d’un hôte LinuxGérer des listes
 - Samba est un logiciel libre, distribué sous licence gratuite.
 # 3 - Installation et configuration
 
-Sur votre terminal, saisissez la commande suivante pour installer Samba :
+- Sur votre terminal, saisissez la commande suivante pour installer Samba :
 ```
 $sudo apt update
 $sudo apt install samba
 ```
-Pour vérifier si l'installation est réussi:
+- Pour vérifier si l'installation est réussi:
 ```
 $sudo whereis samba
 ```
-Ce qui suit devrait être sa sortie:
+- Ce qui suit devrait être sa sortie:
 ```
 samba: /usr/sbin/samba /usr/lib/samba /etc/samba /usr/share/samba /usr/share/man/man7/samba.7.gz /usr/share/man/man8/samba.8.gz
 ```
 
 ### 2- Configuration
-Après l'installation de Samba, nous devons créer un répertoire pour le partager
+- Lorsque l'installation est terminée, nous devons créer un répertoire pour le partager
 
 ```
 $sudo mkdir /home/<username>/sambashare/
 ```
-N.B: Remplacez ***\<username\>*** par votre nom d'utilisateur.
+N.B: Il faut remplacer ***\<username\>*** par le nom d'utilisateur choisie.
 
-Le fichier de configuration pour Samba se trouve à **/etc/samba/smb.conf**.
+- Le fichier de configuration pour Samba se trouve à **/etc/samba/smb.conf**.
 
-Pour ajouter le nouveau répertoire en tant que partage, nous éditons le fichier en exécutant:
+- Pour ajouter le nouveau répertoire en tant que partage, nous éditons le fichier en exécutant:
 ```
 $sudo nano /etc/samba/smb.conf
 ```
@@ -52,28 +52,22 @@ En bas du fichier, ajoutez les lignes suivantes :
     browsable = yes
 ```
 
-Maintenant que nous avons configuré notre nouveau partage, redémarrez Samba pour qu'il prenne effet :
+- Après la configuration, redémarrer Samba :
 ```
 $sudo service smbd restart
 ```
-Mettez à jour les règles de pare-feu pour autoriser le trafic Samba :
+- Mettez à jour les règles de pare-feu pour autoriser le trafic Samba :
 ```
 $sudo ufw allow samba
 ```
 
-### 3- Configuration des comptes d'utilisateurs et se connecter pour partager
-Étant donné que Samba n'utilise pas le mot de passe du compte système, nous devons configurer un mot de passe Samba pour notre compte utilisateur :
+- Configuration des comptes d'utilisateurs 
+Comme le  Samba n'utilise pas le mot de passe du compte système, nous devons configurer un mot de passe Samba pour notre compte utilisateur :
 ```
 $sudo smbpasswd -a username
 ```
 N.B: Le nom d'utilisateur utilisé doit appartenir à un compte système, sinon il ne sera pas enregistré.
 
+### Et volilà, samba est prêt à utiliser
 
-#### Se connecter pour partager
-Sur Ubuntu : Ouvrez le gestionnaire de fichiers par défaut et cliquez sur Se connecter au serveur puis entrez :
-<p align="left">
-  <img src="https://github.com/Herizoran/SYS1/blob/main/samba/images/samba_connect.jpg" />
-</p>
-
-N.B: ***ip-address*** est l'adresse IP du serveur Samba et ***sambashare*** est le nom du partage.
 <a href='https://github.com/Onja74/SYS-1'>RETOUR</a>
