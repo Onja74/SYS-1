@@ -18,3 +18,76 @@ Il se connecte au serveur FTP, effectue les commandes (récupération ou dépôt
 - On peut travailler avec les répertoires sur les systèmes distants, supprimer ou renommer les fichiers distants tout en transférant 
 les données entre 2 hôtes. 
 # 3 -Installation et configuration
+Dans le terminal, saisir la commande suivante pour installer Vsftpd :
+```
+$sudo apt update
+$sudo apt install vsftpd -y
+$sudo apt install vsftpd -v
+```
+
+Pour vérifier si l'installation du serveur est réussi, la commande:
+
+```
+$sudo systemctl status vsftpd
+```
+Pour une partage de fichier, il est nécessaire d'utiliser un application comme FileZila, qui est une application FTP multiplateforme gratuite et open source, composée de FileZilla Client et FileZilla Server.
+
+ * On peut télécharger gratuitement FileZila dans ce lien: 
+ <https://filezilla-project.org/>
+  Ajout d'un nouveau utilisateur
+Afin d'établir un transfert de fichier pour un mutli-user, il est important d'ajouter des utilisateur pour interagir avec le serveur.
+
+Voici les étapes à suivre:
+
+* Ajouter un utilisateur
+
+```
+$sudo adduser ftpuser
+```
+
+* Créer un nouveau dossier pour l'utilisateur
+
+```
+$sudo mkdir /home/ftpuser/ftp
+$sudo mkdir /home/ftpuser/ftp/fichier
+```
+
+* Changer la permission et la propriétaire du dossier
+
+```
+$sudo chown nobody:nogroup /home/ftpuser/ftp 
+$sudo chmod a-w /home/ftpuser/ftp
+$sudo chown ftpuser:ftpuser /home/ftpuser/ftp/fichier
+```
+
+###  Configuration du serveur VSFTPD
+* Créer un backup pour le ficher vsftpd.conf
+
+```
+$sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
+```
+
+* Modifier le ficher vsftpd.conf
+
+```
+$sudo nano /etc/vsftpd.conf
+```
+
+* Vérification du serveur vsftpd
+
+```
+$sudo systemctl restart vsftpd
+$sudo systemctl status vsftpd
+```
+
+###  Test du serveur VSFTPD
+Le but de ce test est de transférer un fichier provenant d'un utilisateur externe vers le propritaire
+
+
+et si on vérifie les fichiers dans le dossier de destination, les fichiers transferés devront être dans la destination.
+```
+$sudo cd /home/ftpuser/ftp/fichier
+$/home/ftpuser/ftp/fichier# ls -al
+```
+<!-- RETOUR -->
+**<a href=' '>RETOUR</a>**
