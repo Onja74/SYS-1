@@ -39,9 +39,6 @@ $ sudo service nginx restart
 
  Les paramètres stop et start, On peut interrompre et reprendre le service en cours.
 
-- La syntaxe du fichier de configuration présente les caractéristiques suivantes :
-
-Avec les paramètres stop et start, vous pouvez respectivement interrompre et reprendre le service en cours.
 
 - La syntaxe du fichier de configuration présente les caractéristiques suivantes :
 
