@@ -14,7 +14,7 @@ ou partager une imprimante Windows à partir d’un hôte LinuxGérer des listes
 - Samba est un logiciel libre, distribué sous licence gratuite.
 # 3 - Installation et configuration
 
-- Sur votre terminal, saisissez la commande suivante pour installer Samba :
+- Saisir la commande suivante pour installer Samba :
 ```
 $sudo apt update
 $sudo apt install samba
