@@ -13,10 +13,14 @@
  # 3- Installation
  - Télécharger apache sur internet
  - Mettre à jour l'index local de package:
-   $ sudo apt update
+``` 
+ $ sudo apt update
+ ```
  - Installer le package: 
+ ```  
    $ sudo apt install apache2
- # 4- Commandes utiles
+```
+# 4- Commandes utiles
 - Pour arrêter apache2 :  
 ```
 $ sudo systemctl stop apache2
@@ -62,4 +66,6 @@ $ sudo a2ensite default-ssl
 ``` 
 $ sudo systemctl restart apache2.service
 ```
+### Apache2 est maintenant configurée et installée
+
 <a href='https://github.com/Onja74/SYS-1'>RETOUR</a>
