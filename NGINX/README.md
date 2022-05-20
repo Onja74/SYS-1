@@ -45,6 +45,7 @@ $ sudo service nginx restart
 ○ Réglages : tous les réglages commencent par le nom variable respectif. Un espace vide délimite deux arguments et la ligne se termine toujours par un point-virgule.
 
 $ worker_connections 768;
+
 ○ Paramètres avancés : certains paramètres tels que les events-variable comportent des arguments qui leurs sont propres. Ces sous-directives sont entourées par des accolades ({}).
 
 $ events {
