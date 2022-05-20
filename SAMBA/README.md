@@ -14,6 +14,8 @@ ou partager une imprimante Windows à partir d’un hôte LinuxGérer des listes
 - Samba est un logiciel libre, distribué sous licence gratuite.
 # 3 - Installation et configuration
 
+###  Installation
+
 - Saisir la commande suivante pour installer Samba :
 ```
 $sudo apt update
@@ -28,7 +30,7 @@ $sudo whereis samba
 samba: /usr/sbin/samba /usr/lib/samba /etc/samba /usr/share/samba /usr/share/man/man7/samba.7.gz /usr/share/man/man8/samba.8.gz
 ```
 
-### 2- Configuration
+###  Configuration
 - Lorsque l'installation est terminée, nous devons créer un répertoire pour le partager
 
 ```
@@ -68,6 +70,6 @@ $sudo smbpasswd -a username
 ```
 N.B: Le nom d'utilisateur utilisé doit appartenir à un compte système, sinon il ne sera pas enregistré.
 
-### Et volilà, samba est prêt à utiliser
+### Et voilà, samba est prêt à utiliser
 
 <a href='https://github.com/Onja74/SYS-1'>RETOUR</a>
