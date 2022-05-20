@@ -65,4 +65,6 @@ $ events {
 ○ Tabulations et espaces vides : NGINX interprète les espaces libres multiples et les tabulations comme un seul espace vide. Lors de la configuration de NGINX,
 il convient de faire attention à la propreté et lisibilité de la structure du ficher de configuration.
 
+### NGINX est maintenant accessible
+
 <a href='https://github.com/Onja74/SYS-1'>RETOUR</a>
