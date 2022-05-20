@@ -14,7 +14,7 @@ Load balencer : elle désigne le processus de répartition d’un ensemble de t�
 - nginx utilise considérablement moins de stockage par connexion client.
 - mieux lorsqu’il s’agit de traiter un contenu statique
 - Surpasse Apache dans la gestion du contenu statique
-# 3 -Installation
+# 3 -Installation et configuration
 - Actualiser les différents éléments du paquet NGINX de manière à posséder les versions les plus récentes:
 
 $ sudo apt-get update
@@ -64,5 +64,3 @@ $ events {
  
 ○ Tabulations et espaces vides : NGINX interprète les espaces libres multiples et les tabulations comme un seul espace vide. Lors de la configuration de NGINX,
 il convient de faire attention à la propreté et lisibilité de la structure du ficher de configuration.
-
-
